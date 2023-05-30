@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ object.location }}</h5>
+    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Owner: {{ object.owner }}</p>
+    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ object.description }}</p>
+    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Hourly Sales: {{ object.hourly_sales }}</p>
+    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Minimum Customers Per Hour: {{ object.minimum_customers_per_hour }}</p>
+    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Maximum Customers Per Hour: {{ object.maximum_customers_per_hour }}</p>
+    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Average Cookies Per Sales: {{ object.average_cookies_per_sale }}</p>
+    <a href="{% url 'cookie_stand_update' object.pk %}" type="button" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+      Update
+    </a>
+    <a href="{% url 'cookie_stand_delete' object.pk %}" type="button" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+      Delete
+    </a>
+  </div>
+{% endblock content %}
